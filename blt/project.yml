@@ -1,15 +1,16 @@
 project:
   machine_name: consolr
-  prefix: BLT
-  human_name: 'BLTed 8'
+  prefix: BSE
+  human_name: 'Beyond Solr Eclipse!'
   profile:
-    name: lightning
+    name: standard
   local:
     protocol: http
     hostname: 'local.${project.machine_name}.com'
 git:
   default_branch: master
-  remotes: {  }
+  remotes:
+    - git@github.com:jayakrishnanj/consolr.git
 drush:
   aliases:
     remote: '${project.machine_name}.test'
@@ -38,8 +39,8 @@ target-hooks:
 import: null
 modules:
   local:
-    enable: [dblog, devel, seckit, views_ui]
-    uninstall: [acsf, acquia_connector, shield]
+    enable: [d8solr_phone, dblog, devel, seckit, views_ui, admin_toolbar, features_ui]
+    uninstall: [acsf, shield]
   ci:
     enable: {  }
     uninstall: [acquia_connector, shield]
