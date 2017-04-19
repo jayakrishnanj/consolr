@@ -1,0 +1,126 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.phone.body
+    - field.field.node.phone.field_battery_capacity
+    - field.field.node.phone.field_brand
+    - field.field.node.phone.field_built_in_storage
+    - field.field.node.phone.field_camera_resolution
+    - field.field.node.phone.field_features
+    - field.field.node.phone.field_internal_memory
+    - field.field.node.phone.field_operating_system
+    - field.field.node.phone.field_phone_image
+    - field.field.node.phone.field_price
+    - field.field.node.phone.field_processo
+    - image.style.medium
+    - node.type.phone
+  module:
+    - image
+    - options
+    - text
+    - user
+id: node.phone.default
+targetEntityType: node
+bundle: phone
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_battery_capacity:
+    weight: 7
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_brand:
+    weight: 1
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_built_in_storage:
+    weight: 6
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_camera_resolution:
+    weight: 3
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_features:
+    weight: 8
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_internal_memory:
+    weight: 5
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_operating_system:
+    weight: 2
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_phone_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_price:
+    weight: 9
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_processo:
+    weight: 4
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+hidden:
+  links: true

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Internal Memory'
+vid: internal_memory
+description: ''
+hierarchy: 0
+weight: 0

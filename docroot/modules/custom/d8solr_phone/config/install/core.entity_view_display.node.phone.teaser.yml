@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.phone.body
+    - field.field.node.phone.field_battery_capacity
+    - field.field.node.phone.field_brand
+    - field.field.node.phone.field_built_in_storage
+    - field.field.node.phone.field_camera_resolution
+    - field.field.node.phone.field_features
+    - field.field.node.phone.field_internal_memory
+    - field.field.node.phone.field_operating_system
+    - field.field.node.phone.field_phone_image
+    - field.field.node.phone.field_price
+    - field.field.node.phone.field_processo
+    - node.type.phone
+  module:
+    - text
+    - user
+id: node.phone.teaser
+targetEntityType: node
+bundle: phone
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_battery_capacity: true
+  field_brand: true
+  field_built_in_storage: true
+  field_camera_resolution: true
+  field_features: true
+  field_internal_memory: true
+  field_operating_system: true
+  field_phone_image: true
+  field_price: true
+  field_processo: true

@@ -1,0 +1,187 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_battery_capacity
+    - field.storage.node.field_built_in_storage
+    - field.storage.node.field_camera_resolution
+    - field.storage.node.field_features
+    - field.storage.node.field_internal_memory
+    - field.storage.node.field_operating_system
+    - field.storage.node.field_price
+    - field.storage.node.field_processo
+    - field.storage.node.field_brand
+    - search_api.server.localsolr
+  module:
+    - search_api
+    - node
+id: sitesearch
+name: SiteSearch
+description: ''
+read_only: false
+field_settings:
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  field_battery_capacity:
+    label: 'Battery Capacity'
+    datasource_id: 'entity:node'
+    property_path: field_battery_capacity
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_battery_capacity
+  field_built_in_storage:
+    label: 'Built-in Storage'
+    datasource_id: 'entity:node'
+    property_path: field_built_in_storage
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_built_in_storage
+  field_camera_resolution:
+    label: 'Camera Resolution'
+    datasource_id: 'entity:node'
+    property_path: field_camera_resolution
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_camera_resolution
+  field_features:
+    label: Features
+    datasource_id: 'entity:node'
+    property_path: field_features
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_features
+  field_internal_memory:
+    label: 'Internal Memory'
+    datasource_id: 'entity:node'
+    property_path: field_internal_memory
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_internal_memory
+  field_operating_system:
+    label: 'Operating System'
+    datasource_id: 'entity:node'
+    property_path: field_operating_system
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_operating_system
+  field_price:
+    label: Price
+    datasource_id: 'entity:node'
+    property_path: field_price
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_price
+  field_processo:
+    label: 'Processor Speed'
+    datasource_id: 'entity:node'
+    property_path: field_processo
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_processo
+  field_brand:
+    label: Brand
+    datasource_id: 'entity:node'
+    property_path: field_brand
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_brand
+  status:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  uid:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - phone
+    languages:
+      default: false
+      selected:
+        - en
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  ignorecase:
+    fields:
+      - title
+      - body
+      - field_built_in_storage
+      - field_camera_resolution
+      - field_features
+      - field_operating_system
+      - field_price
+      - field_processo
+      - field_brand
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  rendered_item: {  }
+  stemmer:
+    fields:
+      - title
+      - body
+    exceptions:
+      texan: texa
+      mexican: mexic
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+tracker_settings:
+  default: {  }
+options:
+  index_directly: true
+  cron_limit: 50
+server: localsolr

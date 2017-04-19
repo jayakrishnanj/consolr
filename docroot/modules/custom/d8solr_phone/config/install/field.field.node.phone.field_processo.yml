@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_processo
+    - node.type.phone
+id: node.phone.field_processo
+field_name: field_processo
+entity_type: node
+bundle: phone
+label: 'Processor Speed'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: GHz
+field_type: decimal

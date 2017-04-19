@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_camera_resolution
+    - node.type.phone
+id: node.phone.field_camera_resolution
+field_name: field_camera_resolution
+entity_type: node
+bundle: phone
+label: 'Camera Resolution'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: MP
+field_type: decimal

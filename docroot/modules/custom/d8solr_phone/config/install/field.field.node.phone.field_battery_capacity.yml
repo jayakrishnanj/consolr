@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_battery_capacity
+    - node.type.phone
+id: node.phone.field_battery_capacity
+field_name: field_battery_capacity
+entity_type: node
+bundle: phone
+label: 'Battery Capacity'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: MAh
+field_type: integer

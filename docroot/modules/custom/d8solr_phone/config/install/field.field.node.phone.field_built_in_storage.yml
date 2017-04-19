@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_built_in_storage
+    - node.type.phone
+  module:
+    - options
+id: node.phone.field_built_in_storage
+field_name: field_built_in_storage
+entity_type: node
+bundle: phone
+label: 'Built-in Storage'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
